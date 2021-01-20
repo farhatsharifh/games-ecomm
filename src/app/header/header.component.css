@@ -4,7 +4,7 @@ nav {
 }
 .header-font {
   color: var(--light-grey);
-  font-size: larger;
+  font-size: large;
   font-weight: 600;
 }
 .spacer {
@@ -45,6 +45,7 @@ ul {
   border: none;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
+  font-size: smaller;
 }
 
 /* .search-button {
@@ -56,7 +57,7 @@ ul {
   margin-left: 0;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   nav {
     padding-top: 16px;
     padding-bottom: 16px;
