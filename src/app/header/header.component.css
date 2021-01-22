@@ -13,9 +13,13 @@ nav {
 .brand-text a:hover,
 .brand-text a:active,
 .brand-text a:focus {
-  color: var(--lighter-blue);
+  color: var(--highlight-color);
   outline: none;
   text-decoration: none;
+}
+
+mat-icon {
+  color: var(--highlight-color);
 }
 
 .spacer {

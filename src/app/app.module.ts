@@ -8,13 +8,15 @@ import { AngularMaterialModule } from './ecomm-modules/angular-material.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { CollectionsComponent } from './collections/collections.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    CollectionsComponent
   ],
   imports: [
     BrowserModule,
