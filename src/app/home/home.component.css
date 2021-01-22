@@ -1,0 +1,74 @@
+.banner-overlay {
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 100;
+  position: absolute;
+}
+.banner-heading {
+  margin-top: 90px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+.banner-imgs {
+  position: relative;
+  align-items: center;
+}
+.banner-img1 {
+  background-image: url("../../assets/banner/videogames-banner.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 50vw;
+}
+.banner-img2 {
+  background-image: url("../../assets/banner/fangear-banner.png");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  min-width: 50vw;
+}
+.banner-content {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  align-items: center;
+  position: relative;
+  margin-top: 470px;
+}
+.banner-text {
+  opacity: 0.95;
+  font-size: 32px;
+  line-height: 50px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: black;
+}
+
+@media screen and (max-width: 992px) {
+  .banner-heading {
+    font-size: 40px;
+  }
+  .banner-text {
+    font-size: 25px;
+    line-height: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-img1, .banner-img2 {
+    min-height: 50vh;
+  }
+  .banner-content {
+    margin-bottom: 145px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner-heading {
+    font-size: 30px;
+  }
+  .banner-text {
+    font-size: 20px;
+    line-height: 46px;
+  }
+}
