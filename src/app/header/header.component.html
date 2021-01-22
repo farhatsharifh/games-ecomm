@@ -2,24 +2,24 @@
 
   <div class="brand">
     <a routerLink="/" mat-mini-fab color="white" class="brand-icon" aria-label="ecommerce store brand-icon">
-      <mat-icon color="primary">shopping_basket</mat-icon>
+      <mat-icon>shopping_basket</mat-icon>
     </a>
     <span class="brand-text"><a routerLink="/">E-Comm</a></span>
   </div>
 
   <button  type="button" class="navbar-toggler" aria-controls="nav-group" (click)="navgroup.toggle()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
-    <mat-icon color="white" class="header-icon">menu</mat-icon>
+    <mat-icon class="header-icon">menu</mat-icon>
   </button>
 
   <div class="collapse navbar-collapse" id="nav-group" #navgroup="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-    <ul class="navbar-nav mx-auto my-3">
+    <ul class="navbar-nav mx-auto my-3 justify-content-center align-items-center">
       <li>
         <form class="">
           <div class="input-group searchbar ml-4">
             <input matInput type="text" class="search-input" placeholder="Search here" aria-label="Search here">
             <div class="input-group-append">
               <button class="input-group-text search-button">
-                <mat-icon color="primary" class="header-icon">search</mat-icon>
+                <mat-icon class="header-icon">search</mat-icon>
                 Search
               </button>
             </div>
@@ -30,16 +30,17 @@
 
     <span class="spacer"></span>
 
-    <ul>
+    <ul class="justify-content-center align-items-center">
       <li>
-        <button routerLink="/" mat-raised-button class="rounded-button"  aria-label="my cart icon">
-          <mat-icon color="primary" class="header-icon">shopping_cart</mat-icon>
+        <button routerLink="/" mat-raised-button class="rounded-button ml-2" aria-label="my cart icon">
+          <mat-icon class="header-icon">shopping_cart</mat-icon>
           My Cart
         </button>
       </li>
       <li>
-        <button routerLink="/" mat-mini-fab color="white" class="header-icon" aria-label="user icon">
-          <mat-icon color="primary">person</mat-icon>
+        <button routerLink="/"  mat-raised-button class="rounded-button ml-2" aria-label="user icon">
+          <mat-icon class="header-icon">person</mat-icon>
+          Login
         </button>
       </li>
     </ul>
