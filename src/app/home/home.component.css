@@ -47,6 +47,16 @@
   text-shadow: 2px 2px 2px rgba(206, 90, 55, 0.8);
   background-color: black;
 }
+.banner-btn {
+  z-index: 102;
+  font-size: 16px;
+  font-weight: 600;
+}
+.banner-btn:hover {
+  background-color: var(--highlight-color);
+  color: #fff;
+}
+
 
 @media screen and (max-width: 992px) {
   .banner-heading {
