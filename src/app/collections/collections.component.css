@@ -5,7 +5,7 @@
   text-transform: uppercase;
 }
 
-.category-thumb {
+.category-row {
   align-items: center;
 }
 
@@ -31,7 +31,7 @@
 .category-image h4 a:focus,
 .category-image h4 a:active {
   text-decoration: none;
-  color: #ff7315;
+  color: var(--highlight-color);
 }
 
 .category {
@@ -102,6 +102,6 @@
 }
 
 .category .category-title:hover {
-  color: #ff7315;
+  color: var(--highlight-color);
 }
 
