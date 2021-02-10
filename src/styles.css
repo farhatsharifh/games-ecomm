@@ -8,6 +8,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   --shadow-color: rgb(206, 89, 55);
   --light-grey: #ADADAD;
   --dark-grey: #343B3F;
+  --button-grey: #232020;
+  --text-grey: #3a3535;
   --icons-blue: #4050B5;
   --lighter-blue: #8f99dd;
 }

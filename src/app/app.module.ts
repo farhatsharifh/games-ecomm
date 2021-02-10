@@ -5,6 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './ecomm-modules/angular-material.module';
+import { ProductsModule } from './products/products.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -27,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

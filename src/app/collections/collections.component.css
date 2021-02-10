@@ -21,7 +21,7 @@
   text-decoration: none;
   font-size: 18px;
   line-height: 30px;
-  color: #232020;
+  color: var(--button-grey);
   display: block;
   font-weight: 600;
   text-transform: capitalize;
