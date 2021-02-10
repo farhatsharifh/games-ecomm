@@ -9,44 +9,44 @@
   align-items: center;
 }
 
-.category-image {
+.category {
   text-align: center;
 }
 
-.category-image h4 {
+.category h4 {
   margin-top: 20px;
 }
 
-.category-image h4 a {
+.category h4 a {
   text-decoration: none;
   font-size: 18px;
   line-height: 30px;
-  color: #232020;
+  color: var(--button-grey);
   display: block;
   font-weight: 600;
   text-transform: capitalize;
 }
 
-.category-image h4 a:hover,
-.category-image h4 a:focus,
-.category-image h4 a:active {
+.category h4 a:hover,
+.category h4 a:focus,
+.category h4 a:active {
   text-decoration: none;
   color: var(--highlight-color);
 }
 
-.category {
+.category-image {
   position: relative;
   transition: all .2s ease-out 0s;
 }
 
-.category .category-overlay,
-.category:after {
+.category-image .category-overlay,
+.category-image:after {
   position: absolute;
   left: 20px;
   right: 20px;
 }
 
-.category:after {
+.category-image:after {
   content: "";
   display: block;
   background: rgba(31, 28, 28, 0.74902);
@@ -62,12 +62,12 @@
   -moz-border-radius: 50%;
 }
 
-.category:hover:after {
+.category-image:hover:after {
   opacity: .9;
   transform: rotate3d(0, 0, 0, 0deg);
 }
 
-.category img {
+.category-image img {
   width: 100%;
   height: auto;
   border-radius: 50%;
@@ -77,22 +77,22 @@
   -moz-border-radius: 50%;
 }
 
-.category .category-overlay {
+.category-image .category-overlay {
   top: 45%;
   opacity: 0;
-  z-index: 1;
+  z-index: 10;
   transform: translate(10%, -30%);
   transition: all .2s ease-out 0s;
   text-align: center;
 }
 
-.category:hover .category-overlay {
+.category-image:hover .category-overlay {
   opacity: 1;
   transform: translate(0, -50%);
   transition-delay: .2s;
 }
 
-.category .category-title {
+.category-image .category-title {
   display: block;
   font-size: 20px;
   font-weight: 600;
@@ -101,7 +101,12 @@
   padding-top: 14px;
 }
 
-.category .category-title:hover {
+.category-image .category-title:hover {
   color: var(--highlight-color);
 }
 
+@media (max-width: 500px) {
+  .category-image .category-title {
+    font-size: 14px;
+  }
+}
