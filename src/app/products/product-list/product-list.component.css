@@ -1,9 +1,14 @@
 .category-title {
   margin-top: 50px;
-  /* color: white; */
   font-size: 50px;
   font-weight: bold;
   text-shadow: 2px 2px 2px #CE5937;
+}
+
+mat-nav-list a {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-grey);
 }
 
 .product-thumb {
