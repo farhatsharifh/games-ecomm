@@ -4,15 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AngularMaterialModule } from '../ecomm-modules/angular-material.module';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 
 const routes: Routes = [
-  { path: 'allproducts', component: ProductListComponent }
+  { path: 'allproducts', component: ProductListComponent },
+  { path: 'category', component: ProductDetailComponent }
 ]
 
 @NgModule({
   declarations: [
-    ProductListComponent
+    ProductListComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,
