@@ -60,7 +60,7 @@ ul {
   border: none;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
-  font-size: small;
+  /* font-size: small; */
 }
 
 .searchbar input:focus {

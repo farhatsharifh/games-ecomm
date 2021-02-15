@@ -6,12 +6,12 @@
 	    <!-- row-->
       <div class="product-row row mt-lg-5 mt-3">
 
-        <div *ngFor="let num of [1,2,3,4,5,6]"
-          class="col-lg-3 col-4 product-card mt-4">
+        <div *ngFor="let product of featuredProducts"
+          class="product-card col-lg-3 col-4 mt-4">
 					<div class="product-grid">
 						<div class="product-thumb">
 							<a href="#">
-								<img class="product-image img-fluid" src="../../assets/product/game-1.png">
+								<img class="product-image img-fluid" src="{{product.imagePath}}">
               </a>
               <button type="submit" class="transmitv-cart add-to-cart">
                 Add to Cart
@@ -19,8 +19,8 @@
 
 						</div>
 						<div class="product-content">
-							<h3 class="product-title"><a href="">Product name</a></h3>
-							<span class="product-price">$89.99</span>
+							<h3 class="product-title"><a href="">{{product.title}}</a></h3>
+							<span class="product-price">{{product.price}}</span>
 						</div>
 					</div>
         </div>
@@ -29,7 +29,8 @@
       <!-- row-->
 
       <div class="view-all text-center my-5">
-        <button mat-raised-button class="view-all-btn col-4">View All Products</button>
+        <button mat-raised-button class="view-all-btn col-4"
+          (click)="viewAllProducts()">View All Products</button>
       </div>
     </div>
   </div>
