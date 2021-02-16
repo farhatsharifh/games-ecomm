@@ -3,17 +3,17 @@
     <div class="container py-lg-2">
       <h3 class="collections-title mb-0 mt-5 text-center">Collections</h3>
       <div class="category-row row mt-5 justify-content-center align-items-center">
-        <div *ngFor="let number of [0,1,2,3]"
+        <div *ngFor="let category of allCategories"
           class="col-lg-2 col-4 category mx-3">
           <div class="category-image">
-            <a href="#">
-              <img src="../../assets/category/category1.png" class="img-fluid" alt="" />
+            <a [routerLink]="['/category', category.name]">
+              <img src={{category.imagePath}} class="img-fluid" alt="image for {{category.title}}" />
               <div class="category-overlay">
-                <h3 class="category-title">Category</h3>
+                <h3 class="category-title">{{category.title}}</h3>
               </div>
             </a>
           </div>
-          <h4><a href="">Category1</a></h4>
+          <h4><a [routerLink]="['/category', category.name]">{{category.title}}</a></h4>
         </div>
 
       </div>

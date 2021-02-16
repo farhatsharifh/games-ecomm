@@ -13,6 +13,7 @@ export class ProductListComponent implements OnInit {
   // allProducts: Product[];
   allProducts = ALL_PRODUCTS;
   productList = ALL_PRODUCTS;
+  categoryTitle = "Shop Your Favorites";
 
   constructor(
     private router: Router,
@@ -35,19 +36,5 @@ export class ProductListComponent implements OnInit {
       }
     }
   }
-
-/*   loadList(category: string) {
-    console.log("1*** , ", 'startfunc')
-    // this.route.reload();
-    this.productList = [];
-    console.log("2*** , ", this.productList)
-    for (let i = 0; i < this.allProducts.length; i++) {
-      if (this.allProducts[i].category === category) {
-        this.productList.push(this.allProducts[i]);
-      }
-    }
-    console.log("3*** , ", 'endfunc')
-    this.router.navigate(['/category', category]);
-  } */
 
 }
