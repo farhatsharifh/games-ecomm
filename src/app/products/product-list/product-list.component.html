@@ -1,7 +1,7 @@
 <section class="product-category">
   <div class="py-5">
     <div class="container py-lg-2">
-      <h1 class="category-title mb-5 text-center">Product Category</h1>
+      <h1 class="category-title mb-5 text-center">{{categoryTitle}}</h1>
 
       <div class="row mt-lg-5 mt-3">
 
@@ -9,7 +9,7 @@
           <mat-nav-list>
             <a mat-list-item [routerLink]="['/category', 'video-game']">Video Games</a>
             <a mat-list-item [routerLink]="['/category', 'fan-gear']">Fan Gear</a>
-            <a mat-list-item [routerLink]="['/allproducts']" >View All</a>
+            <a mat-list-item [routerLink]="['/allproducts']">View All</a>
          </mat-nav-list>
         </div>
 

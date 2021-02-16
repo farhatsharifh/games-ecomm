@@ -8,13 +8,15 @@
       <div class="banner-img1 col-lg-6 col-md-6">
         <div class="banner-content col-lg-6 col-md-7 col-sm-5 col-6 mx-auto">
           <h1 class="banner-text text-center">Video Games</h1>
-          <button mat-raised-button class="banner-btn mx-auto">Shop now</button>
+          <button mat-raised-button class="banner-btn mx-auto"
+            (click)="loadProducts('video-game')">Shop now</button>
         </div>
       </div>
       <div class="banner-img2 col-lg-6 col-md-6">
         <div class="banner-content col-lg-6 col-md-7 col-sm-5 col-6 mx-auto">
           <h1 class="banner-text text-center">Fan Gear</h1>
-          <button mat-raised-button class="banner-btn mx-auto">Shop now</button>
+          <button mat-raised-button class="banner-btn mx-auto"
+            (click)="loadProducts('fan-gear')">Shop now</button>
         </div>
       </div>
     </div>
