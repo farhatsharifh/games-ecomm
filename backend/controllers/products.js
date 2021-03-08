@@ -1,7 +1,14 @@
 const Product = require("../models/product");
 
 exports.getAllProducts = (req, res, next) => {
-  const productQuery = Product.find();
+  const productCategory = req.params.category;
+  var productQuery = null;
+  if( productCategory === "allproducts") {
+    productQuery = Product.find();
+  } else {
+    productQuery = Product.find( {category: productCategory} );
+  }
+
   let fetchedProducts;
   productQuery.then(documents => {
     fetchedProducts = documents;
