@@ -15,13 +15,14 @@ export class ProductsService {
 
   private products: Product[] = [];
   private productsUpdated = new Subject<{products: Product[], productsCount: number}>();
+  private featuredProducts: Product[] = [];
 
   constructor(
     private http: HttpClient
   ) { }
 
   getAllProducts(category: string){
-    this.http.get<{message: string, products: any, maxProducts: number}>(BACKENDURL + category)
+    this.http.get<{message: string, products: any, maxProducts: number}>(BACKENDURL + "category/" + category)
       .pipe(map((resData) => {
         return {
         products: resData.products.map(product => {
@@ -51,11 +52,37 @@ export class ProductsService {
     return this.productsUpdated.asObservable();
   }
 
-
   getProduct(id: string){
     return this.http.get
       <{_id: string, title: string, price: string, description: string, imagePath: string, detail: string, category: string, featured: boolean}>
       (BACKENDURL + "product/" + id);
+  }
+
+  getFeaturedProducts(){
+    this.http.get<{message: string, products: any, maxProducts: number}>(BACKENDURL + "featured")
+      .pipe(map((resData) => {
+        return {
+        products: resData.products.map(product => {
+          return {
+            id: product._id,
+            title: product.title,
+            price: product.price,
+            description: product.description,
+            imagePath: product.imagePath,
+            detail: product.detail,
+            category: product.category,
+            featured: product.featured
+          };
+        }),
+        maxProducts: resData.maxProducts};
+      }))
+      .subscribe((transformedProductsData) => {
+        this.featuredProducts = transformedProductsData.products;
+        this.productsUpdated.next({
+          products: [...this.featuredProducts],
+          productsCount: transformedProductsData.maxProducts
+        });
+      });
   }
 
 }
