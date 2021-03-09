@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
     }
     this.productService.getAllProducts(categoryName);
     this.productsSub = this.productService
-    .getPostUpdateListener()
+    .getProductUpdateListener()
     .subscribe((productsData: { products: Product[] }) => {
       this.productList = productsData.products;
     });

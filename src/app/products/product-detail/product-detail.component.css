@@ -3,16 +3,24 @@
   height: auto;
 }
 .product-title {
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 900;
   margin: 0 0 6px 0;
   color: var(--text-grey);
   text-shadow: 1px 1px 1px #CE5937;
+  line-height: normal;
 }
 .product-price {
   color: var(--text-grey);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
+  line-height: normal;
+}
+.product-heading {
+  font-size: 22px;
+  font-weight: 900;
+  margin: 0 0 6px 0;
+  color: var(--text-grey);
 }
 .product-desc {
   color: var(--text-grey);

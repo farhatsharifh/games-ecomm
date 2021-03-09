@@ -15,7 +15,6 @@ export class ProductsService {
 
   private products: Product[] = [];
   private productsUpdated = new Subject<{products: Product[], productsCount: number}>();
-  private product: Product;
 
   constructor(
     private http: HttpClient
@@ -48,8 +47,15 @@ export class ProductsService {
       });
   }
 
-  getPostUpdateListener(){
+  getProductUpdateListener(){
     return this.productsUpdated.asObservable();
+  }
+
+
+  getProduct(id: string){
+    return this.http.get
+      <{_id: string, title: string, price: string, description: string, imagePath: string, detail: string, category: string, featured: boolean}>
+      (BACKENDURL + "product/" + id);
   }
 
 }

@@ -3,14 +3,15 @@
     <div class="product-description row mt-5">
       <div class="col-md-4 col-8">
         <div class="product-thumb">
-            <img class="product-image img-fluid" src="../../assets/product/game-1.png">
+            <img class="product-image img-fluid" src={{product.imagePath}}>
         </div>
       </div>
       <div class="col-md-8 col-8">
         <div class="product-content">
-          <h3 class="product-title mb-2">Product name</h3>
-          <h4 class="product-price mb-5">$09.99</h4>
-          <p class="product-desc mb-5">Product description<br>Product description<br>Product description</p>
+          <h3 class="product-title mb-2">{{product.title}}</h3>
+          <h4 class="product-price mb-5">{{product.price}}</h4>
+          <h3 class="product-heading mb-2">Product description:</h3>
+          <p class="product-desc mb-5">{{product.description}}</p>
           <button type="submit" class="add-to-cart">
             Add to Cart
           </button>
@@ -20,13 +21,8 @@
 
     <div class="product-detail row mt-5">
       <div class="detail-content col-10">
-        <h3 class="product-details mb-2">Product details</h3>
-        <p class="product-desc mb-5">Product detailed description<br>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt.
-          Vulputate eu scelerisque felis imperdiet proin. Arcu dui vivamus arcu felis.
-        </p>
+        <h3 class="product-heading mb-2">Product details</h3>
+        <p class="product-desc mb-5">{{product.detail}}</p>
       </div>
     </div>
 
