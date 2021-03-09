@@ -42,3 +42,23 @@ exports.getProduct = (req, res, next) => {
     });
   });
 }
+
+exports.getFeaturedProducts = (req, res, next) => {
+  let featuredProducts;
+  Product.find({featured: true})
+  .then(documents => {
+    featuredProducts = documents;
+    return Product.countDocuments();
+  }).then(count => {
+      res.status(200).json({
+        message: 'Featured Products fetched successfully',
+        products: featuredProducts,
+        maxProducts: count
+      });
+  })
+  .catch(error => {
+    res.status(500).json({
+      message: "Fetching products failed!"
+    });
+  });
+}
