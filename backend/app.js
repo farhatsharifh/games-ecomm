@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use("/api/products", productRoutes);
 
 app.use('/ecomm-store/', function(req, res){
-  res.send("Hello from the ecomm-store");
+  res.send("Welcome at the ecomm-store, Developed by Farhat Sharif");
 });
 
 module.exports = app;

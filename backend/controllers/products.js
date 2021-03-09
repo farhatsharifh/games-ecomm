@@ -26,3 +26,19 @@ exports.getAllProducts = (req, res, next) => {
     });
   });
 }
+
+exports.getProduct = (req, res, next) => {
+  Product.findById(req.params.id)
+  .then(product => {
+    if (product) {
+      res.status(200).json(product);
+    } else {
+      res.status(404).json({message: "Product not found"});
+    }
+  })
+  .catch(error => {
+    res.status(500).json({
+      message: "Fetching product failed!"
+    });
+  });
+}
