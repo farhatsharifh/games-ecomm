@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ALL_CATEGORIES } from './dummy-categories';
+import { Category } from './category.model';
+import { CategoriesService } from './categories.service';
 
 @Component({
   selector: 'app-collections',
@@ -8,11 +9,21 @@ import { ALL_CATEGORIES } from './dummy-categories';
   styleUrls: ['./collections.component.css']
 })
 export class CollectionsComponent implements OnInit {
-  allCategories = ALL_CATEGORIES;
+  CategoryList: Category[] = [];
 
-  constructor() { }
+  constructor(
+    private categoryService: CategoriesService
+  ) { }
 
   ngOnInit(): void {
+    this.loadCategories();
+  }
+
+  loadCategories() {
+    this.categoryService.getAllCategories()
+    .subscribe((categoriesData) => {
+      this.CategoryList = categoriesData.categories;
+    });
   }
 
 }
