@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
-import { ALL_PRODUCTS } from 'src/app/dummy-products';
 import { Product } from '../products/product.model';
+import { ProductsService } from '../products/products.service';
 
 @Component({
   selector: 'app-featured-products',
@@ -10,23 +11,29 @@ import { Product } from '../products/product.model';
   styleUrls: ['./featured-products.component.css']
 })
 export class FeaturedProductsComponent implements OnInit {
-  allProducts = ALL_PRODUCTS;
   featuredProducts: Product[] = [];
+  private productsSub: Subscription;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private productService: ProductsService
   ) { }
 
   ngOnInit(): void {
     this.loadFeaturedProducts();
   }
 
+  ngOnDestroy(): void {
+    this.productsSub.unsubscribe();
+  }
+
   loadFeaturedProducts(){
-    for (let i = 0; i < this.allProducts.length; i++) {
-      if (this.allProducts[i].featured == true) {
-        this.featuredProducts.push(this.allProducts[i]);
-      }
-    }
+    this.productService.getFeaturedProducts();
+    this.productsSub = this.productService
+      .getProductUpdateListener()
+      .subscribe((productsData: { products: Product[] }) => {
+        this.featuredProducts = productsData.products;
+      });
   }
 
   viewAllProducts() {

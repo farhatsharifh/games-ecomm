@@ -3,7 +3,7 @@
     <div class="container py-lg-2">
       <h3 class="collections-title mb-0 mt-5 text-center">Collections</h3>
       <div class="category-row row mt-5 justify-content-center align-items-center">
-        <div *ngFor="let category of allCategories"
+        <div *ngFor="let category of CategoryList"
           class="col-lg-2 col-4 category mx-3">
           <div class="category-image">
             <a [routerLink]="['/category', category.name]">

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { Product } from '../product.model';
-import { ALL_PRODUCTS } from 'src/app/dummy-products';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,14 +11,14 @@ import { ALL_PRODUCTS } from 'src/app/dummy-products';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  // allProducts: Product[];
-  allProducts = ALL_PRODUCTS;
-  productList = ALL_PRODUCTS;
-  categoryTitle = "Shop Your Favorites";
+  productList: Product[] = [];
+  featuredTitle = "Shop Your Favorites";
+  private productsSub: Subscription;
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public productService: ProductsService
   ) { }
 
   ngOnInit(): void {
@@ -25,16 +26,21 @@ export class ProductListComponent implements OnInit {
     this.loadList();
   }
 
+  ngOnDestroy(): void {
+    this.productsSub.unsubscribe();
+  }
+
   loadList() {
-    const categoryName = this.activatedRoute.snapshot.paramMap.get('categoryName');
-    if (categoryName) {
-      this.productList = [];
-      for (let i = 0; i < this.allProducts.length; i++) {
-        if (this.allProducts[i].category === categoryName) {
-          this.productList.push(this.allProducts[i]);
-        }
-      }
+    var categoryName = this.activatedRoute.snapshot.paramMap.get('categoryName');
+    if (!categoryName) {
+      categoryName = 'allproducts';
     }
+    this.productService.getAllProducts(categoryName);
+    this.productsSub = this.productService
+    .getProductUpdateListener()
+    .subscribe((productsData: { products: Product[] }) => {
+      this.productList = productsData.products;
+    });
   }
 
 }
