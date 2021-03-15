@@ -23,7 +23,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   loadProductDetails() {
-    // this.productId = this.activatedRoute.snapshot.paramMap.get('productId')
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('productId')) {
         this.productId = paramMap.get('productId');
