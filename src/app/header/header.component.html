@@ -37,10 +37,22 @@
           My Cart
         </button>
       </li>
-      <li>
-        <button routerLink="/"  mat-raised-button class="rounded-button ml-2" aria-label="user icon">
+      <li *ngIf="!userIsAuthenticated">
+        <button routerLink="/auth/login"  mat-raised-button class="rounded-button ml-2" aria-label="user icon">
           <mat-icon class="header-icon">person</mat-icon>
           Login
+        </button>
+      </li>
+<!--       <li *ngIf="!userIsAuthenticated">
+        <button routerLink="/auth/signup"  mat-raised-button class="rounded-button ml-2" aria-label="register icon">
+          <mat-icon class="header-icon">how_to_reg</mat-icon>
+          Signup
+        </button>
+      </li> -->
+      <li *ngIf="userIsAuthenticated">
+        <button mat-raised-button class="rounded-button ml-2" aria-label="user icon" (click)="onLogout()">
+          <mat-icon class="header-icon">person</mat-icon>
+          Logout
         </button>
       </li>
     </ul>

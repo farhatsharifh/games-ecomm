@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularMaterialModule } from './ecomm-modules/angular-material.module';
 import { ProductsModule } from './products/products.module';
+import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,7 +24,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     CollectionsComponent,
     FeaturedProductsComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { FooterComponent } from './footer/footer.component';
     NgbModule,
     HttpClientModule,
     AngularMaterialModule,
-    ProductsModule
+    ProductsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
