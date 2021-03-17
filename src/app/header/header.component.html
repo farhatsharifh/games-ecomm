@@ -37,23 +37,43 @@
           My Cart
         </button>
       </li>
-      <li *ngIf="!userIsAuthenticated">
-        <button routerLink="/auth/login"  mat-raised-button class="rounded-button ml-2" aria-label="user icon">
-          <mat-icon class="header-icon">person</mat-icon>
-          Login
-        </button>
-      </li>
-<!--       <li *ngIf="!userIsAuthenticated">
-        <button routerLink="/auth/signup"  mat-raised-button class="rounded-button ml-2" aria-label="register icon">
-          <mat-icon class="header-icon">how_to_reg</mat-icon>
-          Signup
-        </button>
-      </li> -->
-      <li *ngIf="userIsAuthenticated">
-        <button mat-raised-button class="rounded-button ml-2" aria-label="user icon" (click)="onLogout()">
-          <mat-icon class="header-icon">person</mat-icon>
-          Logout
-        </button>
+
+      <li>
+        <div ngbDropdown class="d-inline-block">
+          <button ngbDropdownToggle mat-raised-button class="rounded-button ml-2" id="user-action" aria-label="user icon">
+            <mat-icon class="header-icon">person</mat-icon>
+            User area
+          </button>
+          <div ngbDropdownMenu aria-labelledby="user-action">
+            <ul class="useraction-ul">
+              <li *ngIf="!userIsAuthenticated">
+                <button ngbDropdownItem routerLink="/auth/login">
+                  <mat-icon class="header-icon">login</mat-icon>
+                  Login
+                </button>
+              </li>
+              <li *ngIf="!userIsAuthenticated">
+                <button ngbDropdownItem routerLink="/auth/signup">
+                  <mat-icon class="header-icon">how_to_reg</mat-icon>
+                  Signup
+                </button>
+              </li>
+
+              <li *ngIf="userIsAuthenticated">
+                <button ngbDropdownItem routerLink="/">
+                  <mat-icon class="header-icon">face</mat-icon>
+                  User Account
+                </button>
+              </li>
+              <li *ngIf="userIsAuthenticated">
+                <button ngbDropdownItem (click)="onLogout()">
+                  <mat-icon class="header-icon">logout</mat-icon>
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </li>
     </ul>
 

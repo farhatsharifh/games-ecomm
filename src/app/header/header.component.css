@@ -50,6 +50,11 @@ ul {
   margin: 0 16px;
 }
 
+.useraction-ul {
+  display: flex;
+  flex-direction: column;
+}
+
 .searchbar {
   margin: auto 16px;
 }
