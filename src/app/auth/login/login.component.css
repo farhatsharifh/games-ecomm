@@ -1,0 +1,50 @@
+.top-spacer {
+  margin-top: 90px;
+}
+
+.login-form {
+  min-height: 80vh;
+  margin: auto;
+}
+
+.page-heading {
+  font-size: 32px;
+  font-weight: bolder;
+  text-shadow: 2px 2px 2px rgba(206, 90, 55, 0.8);
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+mat-card {
+  width: 80%;
+}
+
+.login-btn {
+  color: #fff;
+  background-color: var(--button-grey);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.login-btn:hover {
+  background-color: var(--highlight-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight-color);
+  font-weight: bolder;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: var(--button-grey);
+  font-weight: bolder;
+  text-shadow: .5px .5px .5px rgba(206, 90, 55, 0.8);
+}
+

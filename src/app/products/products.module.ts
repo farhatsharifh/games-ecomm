@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule, Routes } from '@angular/router';
 
 import { AngularMaterialModule } from '../ecomm-modules/angular-material.module';
 import { ProductsRoutingModule } from './products-routing.module';

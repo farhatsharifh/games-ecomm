@@ -1,0 +1,31 @@
+<div class="top-spacer"></div>
+<div class="container py-5 mx-auto text-center signup-form">
+  <div class="page-heading mx-auto text-center">
+    <h1>Signup</h1>
+  </div>
+  <mat-card class="mx-auto mb-1">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+      <mat-form-field class="col-8 mb-3">
+        <input matInput
+          name="email" ngModel type="email" placeholder="E-mail" #emailInput="ngModel" required email>
+          <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="col-8 mb-3">
+        <input matInput
+          name="password" ngModel type="password" placeholder="Password" #passwordInput="ngModel" required>
+          <mat-error *ngIf="passwordInput.invalid">Please enter valid email.</mat-error>
+      </mat-form-field>
+      <div class="row mb-3">
+        <button
+        mat-raised-button color="primary" class="col-4 mx-auto signup-btn"
+        type="submit" *ngIf="!isLoading">Signup</button>
+      </div>
+    </form>
+  </mat-card>
+  <div class="login-url">
+    <p>Already have an account?
+      <a routerLink="/auth/login">Login here!</a>
+    </p>
+  </div>
+</div>
